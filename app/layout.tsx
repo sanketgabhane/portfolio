@@ -14,8 +14,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   manifest: "/manifest.webmanifest",
   icons: { icon: "/favicon.svg", apple: "/favicon.svg" },
-  openGraph: { type: "website", title, description, url: SITE_URL, images: ["/og-image.jpg"] },
-  twitter: { card: "summary_large_image", title, description, images: ["/og-image.jpg"] },
+  openGraph: {
+    type: "website",
+    title,
+    description,
+    url: SITE_URL,
+    images: ["/og-image.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og-image.jpg"],
+  },
 };
 export const viewport: Viewport = { themeColor: "#0f1218" };
 
@@ -26,7 +37,11 @@ const jsonLd = {
   jobTitle: "Node.js Full Stack Developer",
   email: profile.email,
   url: profile.github,
-  address: { "@type": "PostalAddress", addressLocality: "Pune", addressCountry: "IN" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Pune",
+    addressCountry: "IN",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -38,7 +53,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://fonts.bunny.net/css?family=cabinet-grotesk:500,800|satoshi:400,500,700|jetbrains-mono:400,500&display=swap"
           rel="stylesheet"
         />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body>{children}</body>
     </html>

@@ -24,7 +24,13 @@ export default function Motion() {
           entries.forEach((en) => {
             if (!en.isIntersecting) return;
             io?.unobserve(en.target);
-            gsap.to(en.target, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out", clearProps: "transform" });
+            gsap.to(en.target, {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              ease: "power2.out",
+              clearProps: "transform",
+            });
           }),
         { rootMargin: "0px 0px -8% 0px" },
       );
@@ -33,9 +39,20 @@ export default function Motion() {
       gsap.to(".hero__name", {
         xPercent: -8,
         ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
       });
-      gsap.from(".hero-in", { opacity: 0, y: 30, duration: 0.9, stagger: 0.12, ease: "power3.out" });
+      gsap.from(".hero-in", {
+        opacity: 0,
+        y: 30,
+        duration: 0.9,
+        stagger: 0.12,
+        ease: "power3.out",
+      });
     }, document.body);
 
     return () => {
