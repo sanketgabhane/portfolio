@@ -213,9 +213,8 @@ h3 {
 }
 .logo {
   font: 500 0.875rem var(--font-mono);
-  span {
-    color: var(--accent);
-  }
+  color: var(--accent);
+  font-size: 25px;
 }
 
 // ---------- Hero ----------
