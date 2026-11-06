@@ -5,6 +5,8 @@ import SectionHeading from "@/components/SectionHeading";
 import ContactForm from "@/components/ContactForm";
 import Motion from "@/components/Motion";
 
+import Typewriter from "@/components/Typewriter";
+
 const links = [
   ["Career", "#career"],
   ["Work", "#work"],
@@ -35,7 +37,8 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="hero">
+        {/* ------------------------------------- HERO SEECTION START------------------ */}
+        {/* <section className="hero">
           <div className="container">
             <p className="hero-in label hero__status">
               <span className="pulse" /> Immediate joiner · Pune, India
@@ -61,8 +64,43 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section> */}
+
+        <section className="hero">
+          <div className="container">
+            <p className="hero-in label hero__status">
+              <span className="pulse" /> Immediate joiner · Pune, India
+            </p>
+
+            <h1 className="hero__name hero-in">
+              Sanket Gabhane<span className="accent">.</span>
+            </h1>
+
+            <p className="hero__role hero-in">
+              <Typewriter
+                words={["Full Stack Developer", "Frontend Developer"]}
+              />
+            </p>
+
+            <div className="hero__row hero-in">
+              <p className="hero__lead">
+                Node.js full stack developer. I build React front ends, Express
+                APIs and MongoDB models that go from screen to database in
+                production, with 4+ years in Agile teams.
+              </p>
+              <div className="hero__actions">
+                <a href="#work" className="btn btn--solid">
+                  See my work
+                </a>
+                <a href={`mailto:${profile.email}`} className="btn btn--ghost">
+                  Email me
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
 
+        {/* --------------------------------------- HERO END ---------------------------------- */}
         <section className="numbers">
           <dl className="container numbers__grid">
             {numbers.map((n) => (
@@ -74,6 +112,7 @@ export default function Home() {
           </dl>
         </section>
 
+        {/* ---------------------------------- 01 / changelog ------------------------------ */}
         <section id="career" className="section container">
           <SectionHeading no="01 / changelog">
             Where I&apos;ve shipped
