@@ -4,68 +4,17 @@ import Chips from "@/components/Chips";
 import SectionHeading from "@/components/SectionHeading";
 import ContactForm from "@/components/ContactForm";
 import Motion from "@/components/Motion";
-
+import Header from "@/components/Header";
 import Typewriter from "@/components/Typewriter";
-
-const links = [
-  ["Career", "#career"],
-  ["Work", "#work"],
-  ["Toolbox", "#toolbox"],
-  ["Contact", "#contact"],
-];
 
 export default function Home() {
   return (
     <>
       <Motion />
-      <header className="site-header">
-        <nav className="container site-header__nav" aria-label="Primary">
-          <a href="#top" className="logo">
-            Sanket Gabhane
-          </a>
-          <div className="site-header__links">
-            {links.map(([t, h]) => (
-              <a key={h} href={h}>
-                {t}
-              </a>
-            ))}
-          </div>
-          <a href="#contact" className="btn btn--outline btn--sm">
-            Hire me
-          </a>
-        </nav>
-      </header>
+      <Header />
 
       <main id="top">
-        {/* ------------------------------------- HERO SEECTION START------------------ */}
-        {/* <section className="hero">
-          <div className="container">
-            <p className="hero-in label hero__status">
-              <span className="pulse" /> Immediate joiner · Pune, India
-            </p>
-            <h1 className="hero__name hero-in">
-              Sanket
-              <br />
-              Gabhane<span className="accent">.</span>
-            </h1>
-            <div className="hero__row hero-in">
-              <p className="hero__lead">
-                Node.js full stack developer. I build React front ends, Express
-                APIs and MongoDB models that go from screen to database in
-                production, with 4+ years in Agile teams.
-              </p>
-              <div className="hero__actions">
-                <a href="#work" className="btn btn--solid">
-                  See my work
-                </a>
-                <a href={`mailto:${profile.email}`} className="btn btn--ghost">
-                  Email me
-                </a>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
+        {/* ------------------------------------- HERO START ------------------ */}
         <section className="hero">
           <div className="container">
             <p className="hero-in label hero__status">
@@ -99,8 +48,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* --------------------------------------- HERO END ---------------------------------- */}
+
         <section className="numbers">
           <dl className="container numbers__grid">
             {numbers.map((n) => (
@@ -230,7 +179,6 @@ export default function Home() {
                 <Mail size={18} />
                 <a href={`mailto:${profile.email}`}>{profile.email}</a>
               </li>
-
               <li>
                 <Phone size={18} />
                 <a href={profile.phoneHref}>{profile.phone}</a>
