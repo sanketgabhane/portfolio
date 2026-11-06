@@ -391,9 +391,7 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <p className="footer__copy">
-          © 2026 Sanket Gabhane · Full Stack Developer · Pune, IN
-        </p>
+        <p className="footer__copy">© 2026 Sanket Gabhane · Pune, IN</p>
 
         <ul className="footer__social">
           <li>
