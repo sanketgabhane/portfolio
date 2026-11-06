@@ -7,6 +7,7 @@ import ContactForm from "@/components/ContactForm";
 import Motion from "@/components/Motion";
 import Header from "@/components/Header";
 import Typewriter from "@/components/Typewriter";
+import CountUp from "@/components/CountUp";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 const TITLE = "Sanket Gabhane | Node.js & React Full Stack Developer, Pune";
@@ -155,8 +156,9 @@ export default function Home() {
               <Typewriter
                 words={[
                   "Full Stack Developer",
-                  "Node.js Developer",
-                  "React Developer",
+                  "Web Developer",
+                  "React.js Developer",
+                  "Next.js Developer",
                 ]}
               />
             </p>
@@ -181,7 +183,7 @@ export default function Home() {
         </section>
         {/* --------------------------------------- HERO END ---------------------------------- */}
 
-        <section className="numbers" aria-label="Career highlights">
+        {/* <section className="numbers" aria-label="Career highlights">
           <dl className="container numbers__grid">
             {numbers.map((n) => (
               <div key={n.label} className="reveal">
@@ -190,6 +192,26 @@ export default function Home() {
               </div>
             ))}
           </dl>
+        </section> */}
+
+        <section className="numbers" aria-label="Career highlights">
+          <div className="container">
+            <ul className="numbers__grid">
+              {numbers.map((n, i) => (
+                <li key={n.title} className="numbers__item reveal">
+                  <span className="numbers__idx">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="numbers__value">
+                    <CountUp to={n.value} />
+                    <span className="numbers__suffix">{n.suffix}</span>
+                  </p>
+                  <h3 className="numbers__title">{n.title}</h3>
+                  <p className="numbers__label">{n.label}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         {/* ---------------------------------- 01 / experience ------------------------------ */}
@@ -298,7 +320,7 @@ export default function Home() {
         </section>
 
         <section id="contact" className="section container contact">
-          <div className="reveal">
+          {/* <div className="reveal">
             <p className="label">05 / contact</p>
             <h2>Hiring a full stack developer?</h2>
             <p className="muted contact__lead">
@@ -319,7 +341,51 @@ export default function Home() {
                 {profile.location}
               </li>
             </ul>
+          </div> */}
+
+          <div className="reveal">
+            <p className="label">05 / contact</p>
+            <h2>Hiring a full stack developer?</h2>
+            <p className="muted contact__lead">
+              I&apos;m available to join immediately. Send a note about the role
+              or project and I&apos;ll reply quickly.
+            </p>
+            <ul className="contact__list">
+              <li>
+                <Mail size={18} />
+                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              </li>
+              <li>
+                <Phone size={18} />
+                <a href={profile.phoneHref}>{profile.phone}</a>
+              </li>
+              <li>
+                <MapPin size={18} />
+                {profile.location}
+              </li>
+              <li>
+                <Github size={18} />
+                <a
+                  href="https://github.com/sanketgabhane"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  github.com/sanketgabhane
+                </a>
+              </li>
+              <li>
+                <Linkedin size={18} />
+                <a
+                  href="https://www.linkedin.com/in/sanketgabhane/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  linkedin.com/in/sanketgabhane
+                </a>
+              </li>
+            </ul>
           </div>
+
           <ContactForm />
         </section>
       </main>

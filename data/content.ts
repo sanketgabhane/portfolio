@@ -13,17 +13,44 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/sanketgabhane/",
 };
 
+// export const numbers = [
+//   { value: "4+", label: "years shipping full stack products" },
+//   { value: "70%", label: "lift in watch time from the course player" },
+//   { value: "35%", label: "smaller initial bundle via code splitting" },
+//   { value: "30+", label: "reusable React components maintained" },
+// ];
+
 export const numbers = [
-  { value: "4+", label: "years shipping full stack products" },
-  { value: "70%", label: "lift in watch time from the course player" },
-  { value: "35%", label: "smaller initial bundle via code splitting" },
-  { value: "30+", label: "reusable React components maintained" },
+  {
+    value: 4,
+    suffix: "+",
+    title: "Years of experience",
+    label: "Shipping full stack products in Agile teams",
+  },
+  {
+    value: 70,
+    suffix: "%",
+    title: "More watch time",
+    label: "After rebuilding the course player",
+  },
+  {
+    value: 35,
+    suffix: "%",
+    title: "Smaller initial bundle",
+    label: "Faster first load through code splitting",
+  },
+  {
+    value: 30,
+    suffix: "+",
+    title: "Reusable components",
+    label: "React components built and maintained",
+  },
 ];
 
 export const jobs = [
   {
     when: "Mar 2024 – Present",
-    role: "Frontend / Full Stack Developer",
+    role: "Frontend Developer",
     org: "Saksoft, Pune",
     points: [
       "Building a learning management system with React, TypeScript, Node.js, Express and MongoDB.",
