@@ -35,51 +35,58 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="site-header">
-      <nav className="container site-header__nav" aria-label="Primary">
-        <a href="#top" className="logo" onClick={close}>
-          Sanket Gabhane
-        </a>
+    <>
+      <header className="site-header">
+        <nav className="container site-header__nav" aria-label="Primary">
+          <a href="#top" className="logo" onClick={close}>
+            Sanket Gabhane
+          </a>
 
-        <div className="site-header__links">
+          <div className="site-header__links">
+            {links.map(([t, h]) => (
+              <a key={h} href={h}>
+                {t}
+              </a>
+            ))}
+          </div>
+
+          <a
+            href="#contact"
+            className="btn btn--outline btn--sm site-header__cta"
+          >
+            Hire me
+          </a>
+
+          <button
+            type="button"
+            className="burger"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </nav>
+
+        <div
+          id="mobile-menu"
+          className={`mobile-menu ${open ? "is-open" : ""}`}
+        >
           {links.map(([t, h]) => (
-            <a key={h} href={h}>
+            <a key={h} href={h} onClick={close}>
               {t}
             </a>
           ))}
         </div>
+      </header>
 
-        <a
-          href="#contact"
-          className="btn btn--outline btn--sm site-header__cta"
-        >
-          Hire me
-        </a>
-
-        <button
-          type="button"
-          className="burger"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </nav>
-
-      <div id="mobile-menu" className={`mobile-menu ${open ? "is-open" : ""}`}>
-        {links.map(([t, h]) => (
-          <a key={h} href={h} onClick={close}>
-            {t}
-          </a>
-        ))}
-        <a href="#contact" className="btn btn--solid" onClick={close}>
-          Hire me
-        </a>
-      </div>
-    </header>
+      {/* mobile par neeche floating "Hire me" button */}
+      <a href="#contact" className="sticky-cta" onClick={close}>
+        Hire me
+      </a>
+    </>
   );
 }
