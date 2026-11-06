@@ -11,7 +11,40 @@ import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 const TITLE = "Sanket Gabhane | Node.js & React Full Stack Developer, Pune";
 const DESCRIPTION =
-  "Full stack developer in Pune with 4+ years of Agile experience in Node.js, React, Express and MongoDB. Available to join immediately. View projects and get in touch.";
+  "Full stack developer with 4+ years of Agile experience building fast, scalable web apps with Node.js, React, Express and MongoDB. Available to join immediately. Explore my projects and get in touch.";
+
+// export const metadata: Metadata = {
+//   metadataBase: new URL(SITE_URL),
+//   title: TITLE,
+//   description: DESCRIPTION,
+//   keywords: [
+//     "Sanket Gabhane",
+//     "Full Stack Developer Pune",
+//     "Node.js Developer",
+//     "React Developer",
+//     "MERN Stack Developer",
+//     "Frontend Developer",
+//     "Express.js",
+//     "MongoDB",
+//     "Immediate joiner",
+//   ],
+//   authors: [{ name: SITE_NAME, url: SITE_URL }],
+//   alternates: { canonical: "/" },
+//   robots: { index: true, follow: true },
+//   openGraph: {
+//     type: "website",
+//     url: "/",
+//     siteName: SITE_NAME,
+//     title: TITLE,
+//     description: DESCRIPTION,
+//     locale: "en_IN",
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: TITLE,
+//     description: DESCRIPTION,
+//   },
+// };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -19,7 +52,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: [
     "Sanket Gabhane",
-    "Full Stack Developer Pune",
+    "Full Stack Developer",
     "Node.js Developer",
     "React Developer",
     "MERN Stack Developer",
@@ -38,11 +71,20 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     locale: "en_IN",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sanket Gabhane, Full Stack Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -121,10 +163,10 @@ export default function Home() {
 
             <div className="hero__row hero-in">
               <p className="hero__lead">
-                Full stack developer in Pune with 4+ years in Agile teams. I
-                build React front ends, Express APIs and MongoDB models, and
-                take features from screen to database in production. Ready to
-                join immediately.
+                Full stack developer with 4+ years of experience in Agile teams.
+                I design React front ends, Express APIs and MongoDB data models,
+                and ship features end to end, from the first screen to
+                production. Available to join immediately.
               </p>
               <div className="hero__actions">
                 <a href="#work" className="btn btn--solid">

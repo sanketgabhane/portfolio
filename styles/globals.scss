@@ -664,10 +664,14 @@ h3 {
     }
   }
 }
+
+// ---------- Contact form ----------
 .form {
   display: grid;
   gap: 1.25rem;
   align-content: start;
+  min-width: 0; // chhoti screen par overflow na ho
+
   label {
     display: block;
     font-size: 0.875rem;
@@ -683,17 +687,94 @@ h3 {
     border-radius: 0.75rem;
     background: var(--panel);
     color: var(--ink);
-    font: 400 1rem var(--font-body);
+    font: 400 1rem var(--font-body); // 16px: iOS par zoom nahi hoga
     &::placeholder {
       color: color-mix(in oklch, var(--muted) 60%, transparent);
     }
   }
-  .btn {
-    justify-self: start;
+  textarea {
+    resize: vertical;
+    min-height: 8rem;
   }
-  &__note {
-    font-size: 0.875rem;
+  input.is-invalid,
+  textarea.is-invalid {
+    border-color: oklch(0.7 0.19 25);
+  }
+
+  &__error {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: oklch(0.75 0.17 25);
+
+    &--box {
+      margin-top: 0;
+      padding: 0.75rem 1rem;
+      border: 1px solid oklch(0.7 0.19 25);
+      border-radius: 0.75rem;
+    }
+  }
+
+  &__count {
+    display: block;
+    margin-top: 0.35rem;
+    font: 400 0.7rem var(--font-mono);
+    text-align: right;
     color: var(--muted);
+  }
+
+  // honeypot: screen se bahar, bots ko dikhega
+  &__hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  // ----- Submit button (idle / sending / success) -----
+  &__submit {
+    justify-self: stretch; // mobile: poori width
+    justify-content: center;
+    min-height: 3rem;
+    white-space: nowrap;
+
+    // text badalne par button ki width na hile
+    @include md {
+      justify-self: start;
+      min-width: 12.5rem;
+    }
+
+    // sending
+    &[data-state="sending"] {
+      opacity: 0.75;
+      cursor: progress;
+      filter: none;
+    }
+
+    // success: thodi der ke liye alag look, phir wapas normal
+    &[data-state="success"] {
+      background: var(--panel);
+      color: var(--accent);
+      border-color: var(--accent);
+      cursor: default;
+      filter: none;
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+
+  .spin {
+    animation: spin 0.8s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -753,7 +834,8 @@ h3 {
   .typewriter__cursor,
   .pulse,
   .burger span,
-  .mobile-menu {
+  .mobile-menu,
+  .form .spin {
     animation: none;
     transition: none;
   }

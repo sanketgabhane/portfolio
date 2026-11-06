@@ -5,7 +5,7 @@ import "@/styles/globals.scss";
 
 const title = "Sanket Gabhane – Node.js Full Stack Developer";
 const description =
-  "Full stack developer in Pune with 4+ years building React, Node.js and MongoDB products. Immediate joiner.";
+  "Full stack developer with 4+ years of experience building fast, scalable products with React, Node.js and MongoDB. Available to join immediately.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
